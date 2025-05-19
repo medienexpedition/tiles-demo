@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiles-Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="board"></div>
+    <label for="input_size">Size</label>
+    <input type="range" name="input_size" id="input_size" min="1" max="6" step="1" list="sizes">
+    <datalist id="sizes">
+        <option value="1" label="1"></option>
+        <option value="2" label="2"></option>
+        <option value="3" label="3"></option>
+        <option value="4" label="4"></option>
+        <option value="5" label="5"></option>
+        <option value="6" label="6"></option>
+    </datalist>
+    <select name="input_image" id="input_image">
+        <option value="graffiti">graffiti</option>
+        <option value="a-bigger-splash">a bigger splash</option>
+        <option value="sevilla">sevilla</option>
+    </select>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#board {
+    display: flex;
+    flex-direction: column;
+    background-color: grey;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+}
+
+.field {
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+datalist {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  writing-mode: horizontal-lr;
+  width: 200px;
+  margin-left: 37px;
+}
+
+option {
+  padding: 0;
+  text-transform: capitalize;
+}
+
+input[type="range"] {
+  width: 210px;
+  margin: 0;
+}
+
+select {
+  text-transform: capitalize;
+}
