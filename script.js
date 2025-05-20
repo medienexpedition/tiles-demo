@@ -1,6 +1,6 @@
 function init_board() {
-    let xpos = 0;
-    let ypos = 0;
+    let bg_x = 0;
+    let bg_y = 0;
     const rows = board.querySelectorAll(".row");
     console.log(rows);
     if (rows.length > 0) {
@@ -24,8 +24,8 @@ function init_board() {
             element.style.backgroundSize = board_width + "px";
             element.style.height = board_width / size + "px";
             element.style.width = board_width / size + "px";
-            element.style.backgroundPositionX = xpos - x * board_width / size + "px";
-            element.style.backgroundPositionY = ypos - y * board_width / size + "px";
+            element.style.backgroundPositionX = bg_x - x * board_width / size + "px";
+            element.style.backgroundPositionY = bg_y - y * board_width / size + "px";
             row.appendChild(element);
             let tile_id = y * size + x;
             state_row.push(tile_id);
@@ -39,8 +39,8 @@ function init_board() {
 /*  M  A  I  N                                                                                                              */
 /*==========================================================================================================================*/
 
+const board_width = 450;
 let size = 4;
-let board_width = 450;
 let image = "graffiti";
 let state = [];
 
