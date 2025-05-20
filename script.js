@@ -1,9 +1,12 @@
 function init_board() {
+    let xpos = 0;
+    let ypos = 0;
     const rows = board.querySelectorAll(".row");
     console.log(rows);
     if (rows.length > 0) {
         for (let i=0; i < rows.length; i++) {
             board.removeChild(rows[i]);
+            state.pop();
         }
     }
     for (let y=0; y<size; y++) {
@@ -11,7 +14,9 @@ function init_board() {
         row.style.width = board_width + "px";
         row.classList.add("row");
         board.appendChild(row);
+        let state_row = [];
         for (let x=0; x < size; x++) {
+            if (x == size - 1 && y == size - 1) break;
             let element = document.createElement("div");
             element.id = "b" + x + y;
             element.classList.add("field");
@@ -22,19 +27,22 @@ function init_board() {
             element.style.backgroundPositionX = xpos - x * board_width / size + "px";
             element.style.backgroundPositionY = ypos - y * board_width / size + "px";
             row.appendChild(element);
+            let tile_id = y * size + x;
+            state_row.push(tile_id);
         }
+        state.push(state_row);
     }
+    console.log(state);
 }
 
 /*==========================================================================================================================*/
 /*  M  A  I  N                                                                                                              */
 /*==========================================================================================================================*/
 
-size = 4;
-board_width = 450;
-xpos = 0;
-ypos = 0;
-image = "graffiti";
+let size = 4;
+let board_width = 450;
+let image = "graffiti";
+let state = [];
 
 const board = document.getElementById("board");
 board.style.width = board_width + "px";

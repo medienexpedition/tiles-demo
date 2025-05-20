@@ -19,6 +19,7 @@
 .field {
     border: 1px solid black;
     box-sizing: border-box;
+    clip-path: rect(0 100% 100% 0 10%);
 }
 
 datalist {
